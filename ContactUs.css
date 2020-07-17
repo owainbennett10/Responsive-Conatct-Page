@@ -267,73 +267,20 @@ span {
   margin-top: 25px;
 }
 
-/* STRUCTURE */
-
-.wrapper {
-	padding: 5px;
-	max-width: 960px;
-	width: 95%;
-	margin: 20px auto;
-    margin-top: -7px;
-    margin-left:30%;
-    margin-right: 30%;
-}
-header {
-	padding: 0 15px;
+.form-box {
+  max-width: 500px;
+  margin: auto;
+  padding: 50px;
+  background: #ffffff;
+    margin-top: -30px;
 }
 
-.columns {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	margin: 5px 0;
+h1, p {
+  text-align: center;
 }
 
-.column {
-	flex: 1;
-	margin: 2px;
-    color: black
-	padding: 10px;
-	&:first-child { margin-left: 0; }
-	&:last-child { margin-right: 0; }
-	
-}
-
-.column a:hover{
-    text-decoration:un;
-    }
-
-
-@media screen and (max-width: 680px) {
-    .wrapper{
-    padding: 5px;
-	max-width: 960px;
-	width: 95%;
-	margin: 20px auto;
-    margin-top: -7px;
-    }
-    
-    .email{
-        margin-left: 20px;
-    }
-  .columns .column {
-		margin-bottom: 5px;
-    flex-basis: 40%;
-		&:nth-last-child(2) {
-			margin-right: 0;
-		}
-		&:last-child {
-			flex-basis: 100%;
-			margin: 0;
-		}
-	}
-}
-
-@media screen and (max-width: 680px) {
-	.columns .column {
-		flex-basis: 100%;
-		margin: 0 0 5px 0;
-	}
+input, textarea {
+  width: 100%;
 }
 
 /* Animation css */
