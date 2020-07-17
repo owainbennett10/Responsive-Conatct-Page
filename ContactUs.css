@@ -1,0 +1,507 @@
+* {
+  font-family: 'Balsamiq Sans';
+  font-size: 16px;
+  margin: 0;
+}
+
+
+body{
+    font-family: 'Balsamiq Sans';
+}
+
+.mobile-only {
+  display: none;
+}
+
+
+/*Navigation styles*/
+
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  color: white;
+}
+
+
+/*Navigation Logo*/
+
+.logo {
+  height: 96px;
+  width: 145px;
+  color: inherit;
+  text-decoration: none;
+  margin-top: 2px;
+}
+
+.navigation .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigation a {
+  padding: 30px 0;
+}
+
+.nav-links {
+  display: flex;
+  transition: transform 200ms ease-out;
+}
+
+.nav-links a {
+  margin: 0 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links a .underline {
+  width: 100%;
+  border-bottom: 2px solid white;
+  transform: translateY(10px);
+  opacity: 0;
+  display: block;
+}
+
+.nav-links a .underline.hover,
+.nav-links a .underline.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nav-links a,
+.nav-links a .underline {
+  transition: all 160ms ease-in;
+}
+
+
+/* LandingPage styles */
+
+.landing {
+  overflow: hidden;
+  z-index: 5;
+  height: 70vh;
+  background: url("picture3.png") no-repeat center;
+  background-size: cover;
+}
+
+.landing-shade {
+  z-index: 8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 70vh;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 60, 0.5);
+}
+
+.landing-text {
+  color: whitesmoke;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.line{
+    border-top: 3.5px solid #787D81;
+}
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+.landing-text h1 {
+  font-size: 60px;
+}
+.landing-text p {
+  font-size: 23px;
+}
+
+/* Utility styles */
+.text-center {
+  text-align: center;
+}
+.d-flex {
+  display: flex;
+}
+.f-row {
+  flex-direction: row;
+}
+.f-col {
+  flex-direction: column;
+}
+.flex-center-content {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.f-between {
+  justify-content: space-between;
+}
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+/* for mobile */
+@media screen and (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  
+  .landing {
+    height: 50vh;
+  }
+    
+.landing-text h1 {
+  font-size: 2.2em;
+}
+  .landing-text p {
+  font-size:16px;
+}
+    
+  .landing-shade {
+    height: 50vh;
+  }
+  
+  .container {
+    width: 100%;
+  }
+  /*  Navigation styles  */
+  
+  .navigation .container {
+    flex-direction: column;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    width: calc(100vw - 100px);
+    background-color: rgb(40, 40, 40);
+    text-decoration: none;
+  }
+  
+  .nav-links a {
+    text-align: center;
+    padding: 20px 0;
+    margin: 0 30px;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    text-align: left;
+  }
+  
+  .nav-links a:first-of-type {
+    margin-top: 40px;
+  }
+  
+  #nav-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    z-index: 1002;
+    cursor: pointer;
+  }
+  
+  #nav-toggle svg {
+    transform: translate(5px, 5px);
+  }
+  
+  .nav-links.hide {
+    transform: translateX(calc(100vw - 20px));
+  }
+  
+  .nav-links.show {
+    transform: translateX(0);
+  }
+}
+.header {
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
+.first-column {
+  color: black;
+  font-family: 'Anton';
+  margin-top: 27px;
+  font-weight: 900;
+}
+.second-column {
+  color: black;
+  font-size: 21px;
+  font-family: 'Balsamiq Sans';
+  margin-top: 25px;
+}
+.left-image {
+  margin-bottom: 25px;
+  width: 180px;
+  float: left;
+  margin-left: 30px;
+  height: 120px;
+}
+.first-column {
+  color: black;
+  font-size: 40px;
+  font-family: 'Anton', sans-serif;
+  margin-top: 27px;
+  font-weight: 900;
+}
+.second-column {
+  color: black;
+  font-size: 15px;
+  font-family: 'Balsamiq Sans';
+  margin-top: 25px;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+	padding: 5px;
+	max-width: 960px;
+	width: 95%;
+	margin: 20px auto;
+    margin-top: -7px;
+    margin-left:30%;
+    margin-right: 30%;
+}
+header {
+	padding: 0 15px;
+}
+
+.columns {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 5px 0;
+}
+
+.column {
+	flex: 1;
+	margin: 2px;
+    color: black
+	padding: 10px;
+	&:first-child { margin-left: 0; }
+	&:last-child { margin-right: 0; }
+	
+}
+
+.column a:hover{
+    text-decoration:un;
+    }
+
+
+@media screen and (max-width: 680px) {
+    .wrapper{
+    padding: 5px;
+	max-width: 960px;
+	width: 95%;
+	margin: 20px auto;
+    margin-top: -7px;
+    }
+    
+    .email{
+        margin-left: 20px;
+    }
+  .columns .column {
+		margin-bottom: 5px;
+    flex-basis: 40%;
+		&:nth-last-child(2) {
+			margin-right: 0;
+		}
+		&:last-child {
+			flex-basis: 100%;
+			margin: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 680px) {
+	.columns .column {
+		flex-basis: 100%;
+		margin: 0 0 5px 0;
+	}
+}
+
+/* Animation css */
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.transition-300 {
+  transition: all 300ms ease-in;
+}
+
+.anim-fade-down {
+  animation: fade-down 600ms ease-in-out;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+
+/*FOOTER*/
+footer {
+  background: #16222A;
+  margin-top: 40px;
+  background: linear-gradient(59deg, #3A6073, ##000032);
+  color: white;
+  text-align: center;
+}
+footer a {
+  color: #fff;
+  font-size: 16px;
+  transition-duration: 0.2s;
+  line-height: 2;
+}
+footer a:hover {
+  text-decoration: none;
+  color: #3286EE;
+}
+.copy {
+  font-size: 12px;
+  padding: 10px;
+  border-top: 2px solid #FFFFFF;
+}
+.footer-middle {
+  padding-top: 2em;
+  color: white;
+}
+
+.list-unstyled{
+    line-height: 1.8;
+}
+
+/*SOCİAL İCONS*/
+
+/* footer social icons */
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+}
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+
+/* footer social icons */
+.social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+.social-network a.icoLinkedin:hover {
+  background-color: #007bb7;
+}
+.social-network a.icoFacebook:hover i,
+.social-network a.icoLinkedin:hover i {
+  color: #fff;
+}
+.social-network a.socialIcon:hover,
+.socialHoverClass {
+  color: #44BCDD;
+}
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+.social-circle li i {
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+.social-circle li a:hover i,
+.triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.social-circle i {
+  color: #595959;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+.social-network a {
+  background-color: #F9F9F9;
+}

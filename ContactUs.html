@@ -1,106 +1,147 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>S D W Sports Massage</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="Contact.css" />
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <title>Contact Us- OKB Design</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:description" content="OKB Desgin a Developer living in South Wales who developes websites."/>
+    <link rel="stylesheet" href="ContactUs.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <link href="//maxcdn.boostrapcdn.com/boostrap/3.3.1/boostrap.min.css" rel="stylesheet">
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
   <body>
-    <header class="clearfix">
-      <div class="headerContainer">
-        <div class="header-left">
-          <h1 id="title">SDW</h1>
-          <h2 style="font-size: 18px;">Sports Massage Therapist</h2>
-        </div>
-        <div class="header-right">
-          <label for="open">
-          <span class="hidden-desktop"></span>
-          </label>
-          <input type="checkbox" name="" id="open" />
-          <nav>
-            <a href="index.html">Home</a>
-            <a href="#">Services</a>
-            <a href="OurPeople.html">Our People</a>
-            <a href="ContactUs.html">Contact Us</a>
-          </nav>
+    <nav class="navigation">
+      <div class="container">
+        <img  class="logo" src="okbtransparentlogo.png" alt="OKB Design Logo"/>
+        <i id="nav-toggle" class="mobile-only close-btn"></i>
+        <div id="nav-items" class="nav-links hide">
+          <a href="index.html"> Home<span class="underline"></span> </a>
+          <a href="Projects.html"> Projects <span class="underline"></span></a>
+          <a href="ContactUs.html"> Contact Us <span class="underline"></span></a>
         </div>
       </div>
-    </header>
-    <!-- Sizing the image tag works -->
-    <div class="pink 500">
-      <img
-        class="full-width"
-        alt="SDW Company Logo"
-        src="Siondafydd.logo.png" style="height: 400px;" 
-        />
-      <hr class="new1">
-    </div>
+    </nav>
+     <main class="landing">
+  <section class="landing-shade d-flex flex-center-content text-center">
+    <div class="landing-text anim-fade-down">
+      <h1>CONTACT US</h1>
+        <hr class="line">
+        <p>Follow Us on our Social Media Platforms</p>
+      </div>
+  </section>
+</main>
+    <script>
+      // nav state
+      var showMobileNav = false;
+      var navToggleBtn = document.getElementById("nav-toggle");
+      // Get the navigation div
+      var nav = document.getElementById("nav-items");
+      // get an array of the navigation divs children
+      var navItems = nav.children;
+      
+      drawNavIcon(); // This changes the nav icon depending on the state of the nav
+      
+      navToggleBtn.addEventListener("click", (ev) => {
+        // this is called a tenary operator. you can google the meaning and usage
+        showMobileNav ? addAndRemoveClass(nav, "hide", "show") : addAndRemoveClass(nav, "show", "hide");
+      
+        // this changes the state of the nav
+        showMobileNav = !showMobileNav;
+        drawNavIcon();
+      });
+      
+      // loop through children of navigation div
+      for (let i = 0; i < navItems.length; i++) {
+        let el = navItems[i];
+        // the mouseenter event is triggered when the mouse hovers on an element
+        el.addEventListener("mouseenter", (e) => {
+          addClassToSpan(e, ["hover"], []);
+        });
+      
+        // the mouseleave event fires when the mouse leaves an element
+        el.addEventListener("mouseleave", (e) => {
+          addClassToSpan(e, [], ["hover"]);
+        });
+      }
+      
+      // add and remove an array of css classes to an event target
+      function addClassToSpan(ev, addStr, remStr) {
+        // element is the event target in this case the <a> HOME <span class="underline"></span> </a>
+        const element = ev.target;
+      
+        // get the first child of the event target in this case is <span class="underline"></span>
+        const span = element.children[0];
+        if (span) {
+          // remove the provided css class
+          span.classList.remove(...remStr);
+          // add the provided css class
+          span.classList.add(...addStr);
+        }
+      }
+      
+      function addAndRemoveClass(el, addCl, removecl) {
+        el.classList.remove(removecl);
+        el.classList.add(addCl);
+      }
+      
+      function drawNavIcon() {
+        // this is another tenary operator
+        navToggleBtn.innerHTML = showMobileNav
+          ? `<svg height="30px" viewBox="0 0 400 400" width="30px"><path fill="white" d="m243.1875 182.859375 113.132812-113.132813c12.5-12.5 12.5-32.765624 0-45.246093l-15.082031-15.082031c-12.503906-12.503907-32.769531-12.503907-45.25 0l-113.128906 113.128906-113.132813-113.152344c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503907-12.5 32.769531 0 45.25l113.152344 113.152344-113.128906 113.128906c-12.503907 12.503907-12.503907 32.769531 0 45.25l15.082031 15.082031c12.5 12.5 32.765625 12.5 45.246093 0l113.132813-113.132812 113.128906 113.132812c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082031c12.5-12.503906 12.5-32.769531 0-45.25zm0 0"/></svg>`
+          : `<svg height="30px" viewBox="0 -53 384 384" width="30px"><path fill="white" d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path fill="white" d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path fill="white" d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/></svg>`;
+      }
+    </script>
     <div class="container">
-
-  <div class="row">
-    <div class="col-md-4 col-lg-3 first-column">
-      <p>CONTACT US</p>
-    </div>
-    <div class="col-md-8 col-lg-9 second-column">
-      <h2 style="font-size: 16px:">
-      We are happy to respond to any enquiries or queries you may have.
-        </h2>
-        <br>
-        <p>Please use the information on this page to contact us.
-      </p>
-      
-      <br>
-      
       <div class="row">
-        
-        <div class="col-md-4">
-        <h2 style="font-size: 16px:">Opening Times</h2>
-        <p>Mon-Friday: 9am-9pm
-          <br>
-          Saturday:Closed
-          <br>
-          Sunday:Clsoed
-        </p>
+        <div class="col-md-4 col-lg-3 first-column">
+          <h1>CONTACT US</h1>
+        </div>
+        <div class="col-md-8 col-lg-9 second-column">
+          <p>
+            We are happy to respond to any enquiries or queries you may have. Please use the information on this page to contact us.
+          </p>
+        </div>
       </div>
-        <div class="col-md-4">
-        <h2 style="font-size: 16px:">Address</h2>
-        <p><strong>SDW
-        Sports Massage Therapist</strong>
+    </div>
+    <div class="wrapper">
+
+	<section class="columns">
+	
+	<div class="column">
+		<h5 style="margin-left:40px ">Address</h5>
+		<p style="margin-left:40px;">Fountain Road
+            <br>
+        Llannon 
+            <br>
+        Llanelli
+            <br>
+        Carmarthenshire</p>
+	</div>
+	
+	<div class="column">
+		<h5 style="margin-left:40px">Get In Touch</h5>
+		 <b style="margin-left:40px"> Mobile: <a style= "color: black" "text-decoration: none line-height: 1.6;" href="tel:07712535023" target="_blank" rel="noopener noreferrer">07712535023
+          </a>
           <br>
-          Unit 12A
-          <br>
-          Heol Y Parc
-          <br>
-          Pontyberem
-          <br>
-          Llanelli
-          <br>
-          Carmarthenshire
-          <br>
-          SA15 5EA
-        </p>
-      </div>
-        <div class="col-md-4">
-        <h2 style="font-size: 16px:">Get In Touch</h2>
-        <b style="margin-left: -6px"> Mobile: <a style= "color: black" "text-decoration: none" href="tel:07964022613" target="_blank" rel="noopener noreferrer">07964022613
-        </a>
-        <br>
-        <b style="margin-left: -5px"> Tel:  <a style= "color: black" "text-decoration: none" href="tel: 01269269189" target="_blank" rel="noopener noreferrer"> 01269269189</a>
-        <br>
-        <b style="margin-left: -5px">E-mail:</b> <a style= "color: black" href="mailto:siondafydd
-          williams@gmail.com" target="_blank" rel="noopener noreferrer">siondafydd
-        williams@gmail.com</a></b>
-        </b>
-      </div>
-      </div>
-    </div> 
-  </div>
-      </div>
+          <b style="margin-left:40px">E-mail: </b><a style= "color: black" style="margin-left: 18px;" href="mailto:owainbennett3@gmail.com" target="_blank" rel="noopener noreferrer">owainbennett<br><b style="margin-left: 38px">3@gmail.com</b></a></b>
+        </div>
+  <div class="column">
+		<h5 style="margin-left:40px">Follow Us</h5>
+          <a style="margin-left: 30px" href="https://twitter.com/owainbennett4" target="_blank" rel="noopener noreferrer"><img class="alignnone wp-image-85" src="twitterpicture.png" alt="Twitter" width="43" height="40"/></a>
+          <a href="https://www.facebook.com/okbdes10/" target="_blank" rel="noopener noreferrer"><img class="alignnone wp-image-85" src="facebook.png" alt="Facebook" width="39" height="40"/></a>
+        </div>
+      </section>
+    </div>
     <footer class="mainfooter" role="contentinfo">
       <div class="footer-middle">
         <div class="container">
@@ -108,14 +149,11 @@
             <div class="col-md-3 col-sm-6">
               <!--Column1-->
               <div class="footer-pad">
-                <h4>Opening Hours</h4>
-                <ul class="list-unstyled" style="font-size: 14px;">
-                  <li>Mon- Friday: 9am-9pm</li>
-                  <li>Saturday: Closed</li>
-                  <li>Sunday: Closed</li>
-                  <a href="https://www.fresha.com/sion-dafydd-williams-sports-massage-therapist-wm960j8c/booking?menu=true">
-                  <img border="0" alt="booking" src="booking.png" width="150" height="90" />
-                  </a>
+                <h4>Page Links</h4>
+                <ul class="list-unstyled" tyle="font-size: 16px;">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="Projects.html">Projects</a></li>
+                  <li><a href="ContactUs.html">Contact Us</a></li>
                 </ul>
               </div>
             </div>
@@ -123,25 +161,27 @@
               <!--Column1-->
               <div class="footer-pad">
                 <h4>Address</h4>
-                <ul class="list-unstyled" style="font-size: 14px;">
-                  <li>Unit 12A</li>
-                  <li>Heol Y Parc</li>
-                  <li>Pontyberem</li>
+                <ul class="list-unstyled" style="font-size: 16px;">
+                  <li>Fountain Road</li>
+                  <li>Llannon</li>
                   <li>Llanelli</li>
                   <li>Carmarthenshire</li>
-                  <li>SA15 5EA</li>
-                </ul>
+                  </ul>
               </div>
             </div>
             <div class="col-md-3 col-sm-6">
               <!--Column1-->
               <div class="footer-pad">
                 <h4>Get In Touch</h4>
-                <ul class="list-unstyled" style="font-size: 14px;">
-                  <a href="tel:07976 245956" style="color: white;"> Mobile : 07964022613</a>
-                  <br />
-                  <a href="tel:01269269189" style="color: white;"> Tel : 01269269189</a>
-                  <p><a href=" mailto:siondafyddwilliams@gmail.com" style="color: white;"> E-mail: siondafydd<br>williams@gmail.com</a></p>
+                <ul class="list-unstyled" tyle="font-size: 16px;">
+                  <a href="tel:07712535023"> Mobile : 07712535023</a>
+                  <br>
+                  <p>
+                 <a href=" mailto:owainbennett3@gmail.com" style="margin-left: -16px">
+                    E-mail : owainbennett<br>
+                    3@gmail.com
+                    </a>
+                  </p>
                 </ul>
               </div>
             </div>
@@ -149,25 +189,23 @@
               <h4>Follow Us</h4>
               <ul class="social-network social-circle">
                 <li>
-                  <a href="https://www.facebook.com/SDW.SMT/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+                  <a href="https://www.facebook.com/okbdes10/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
                 </li>
-                <a href="https://www.instagram.com/sdw_smt/" target="_blank" rel="noopener noreferrer"><img class="alignnone wp-image-84" src="Instagram.png" alt="" width="37" height="33" /></a>
-                <a href="https://twitter.com/sd_williams09?lang=en" target="_blank" rel="noopener noreferrer"><img class="alignnone wp-image-84" src="twitter.png" alt="" width="37" height="33" /></a>
-                <br>
-                <br>
-                <a href="https://shop.rocktape.co.uk/5cm-x-5m-standard-rolls">
-                <img border="0" alt="Rocktape" src="RocktapeLogo.png" width="150" height="90" /></a>
+                <li>
+                  <a href="https://www.linkedin.com/in/owain-bennett-315155155/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                </li>
               </ul>
+              <a href="https://twitter.com/owainbennett4" target="_blank" rel="noopener noreferrer"><img class="alignnone wp-image-85" src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_twitter-256.png" alt="Twitter" width="33" height="30"/></a>
             </div>
           </div>
-          <br />
+          <br>
           <div class="row">
             <div class="col-md-12 copy">
-              <p class="text-center">S D W Sports Massage &copy; | Developed by OKB Design</p>
+              <p class="text-center">Designed by OKB Design Copyright - All Rights Reserved</p>
             </div>
           </div>
         </div>
       </div>
     </footer>
-  </body>
+    </body>
 </html>
